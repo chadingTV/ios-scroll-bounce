@@ -1,0 +1,124 @@
+@charset "UTF-8";
+*{
+    box-sizing:border-box;
+}
+html,body{
+    margin:0;
+    width:100%;
+    min-height:100vh;
+    font-family: 'Roboto', sans-serif;
+}
+html{background:#333;}
+body{background: #414858;color: #333;}
+.wrap{
+    padding:50px 0;
+}
+/* html.lock,html.lock body{
+  overflow:hidden;position:fixed;z-index:0;
+  top:0;left:0;
+} */
+
+.box{
+    position:relative;
+    background: linear-gradient(#FFF, #000);
+    width: 86%;
+    max-width: 400px;
+    min-width:280px;
+    height:2000px;
+    margin:0 auto;
+    border-radius: 8px;
+    box-shadow:3px 5px 10px 0px rgba(0,0,0,0.5);
+    text-align:center;
+}
+.box>h3{
+    letter-spacing: -1px;
+    font-weight: 900;
+}
+.box>img{
+    width:60px;
+    height:60px;
+    border-radius:5px;
+    margin-top:-15px;
+    box-shadow:1px 1px 5px 0 rgba(0,0,0,0.4);
+    transform:rotate(5deg);
+}
+
+.switch{
+    margin-top:10px;
+    display:inline-block;
+    width:80px;
+    height:20px;
+    border-radius:30px;
+    background:#31bfb8;
+    box-shadow:5px 5px 5px inset rgba(0,0,0,.2);
+    position:relative;
+    transition:background 250ms;
+}
+.switch::before{
+    content:'ON';
+    color:#555;
+    color:#31bfb8;
+    font-size:12px;
+    display:inline-block;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    border-radius:40px;
+    background:#fff;
+    box-shadow:2px 2px 5px 0 rgba(0,0,0,0.2);
+    position:absolute;
+    left:-5px;
+    top:-10px;
+    transition:left 250ms;
+}
+.lock .switch{
+    background:#414858;
+}
+.lock .switch::before{
+    content:'OFF';
+    color:#555;
+    left:45px;
+}
+
+.scroll-text-area{
+  padding-top:20px;
+  position: -webkit-sticky;
+  position:sticky;
+  top:10px;
+  text-shadow:0 0 3px rgba(255,255,255,1);
+}
+
+.bottom{
+  position:fixed;
+  bottom:60px;
+  width:100%;
+  text-align:center;
+}
+.bottom a{
+  color:#FFF;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:-1px;
+  /* text-shadow:0 0 3px rgba(255,255,255,1); */
+}
+
+
+.btn-group span{
+    text-align: center;
+    display: inline-block;
+    width: 160px;
+    line-height: 36px;
+    background: #AAA;
+    border-radius: 30px;
+    color: #DDD;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.5);
+}
+.btn-group span:hover{
+/*     box-shadow: none; */
+}
+.btn-group span.selected{
+    background: #31bfb8;
+    color: #FFF;
+    box-shadow: none;
+}

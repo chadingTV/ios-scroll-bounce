@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+<title>iOS Scroll Sample</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link rel="stylesheet" href="./css/style.css?"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="./inobounce.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="box">
+        <img src="./img/logo.png" alt="chading.net" />
+        <h3>iOS CSS Scroll Bounce Sample</h3>
+        <div class="btn-group" style="text-align:left;display:inline-block">
+            <p>
+                <span class="selected" data-value="0">Default</span>
+            </p>
+            <p>
+                <span data-value="1">Only Fixed</span>
+            </p>
+            <p>
+                <span data-value="2">iNoBounce</span>
+            </p>
+        </div>
+        <div class="scroll-text-area">
+          <p>Window Scroll Top : </p>
+          <p id="window-scroll-top">0</p>
+          <p>Wrap Scroll Top :</p>
+          <p id="wrap-scroll-top">0</p>
+        </div>
+    </div>
+</div>
+<div class="bottom">
+    <a href="https://github.com/chadingTV/ios-scroll-bounce" target="_blank">
+        <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16"
+        version="1.1" width="32" aria-hidden="true">
+        <path fill-rule="evenodd" fill="#FFFFFF" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+        <br/>
+        Github Source Code
+    </a>
+</div>
+<style type="text/css">
+.wrap.scrollable{
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    position: fixed;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+</style>
+<script type="text/javascript">
+var btnValue = 0;
+iNoBounce.disable();
+$(function(){
+  $(".btn-group").on("click","span",function(){
+      $(".btn-group span").removeClass("selected");
+      $(this).addClass("selected");
+      var val = $(this).data("value");
+      switch(val){
+          case 1:
+              $(".wrap").addClass("scrollable");
+              iNoBounce.disable();
+              break;
+          case 2:
+              $(".wrap").addClass("scrollable");
+              iNoBounce.enable();
+              break;
+          default:
+              $(".wrap").removeClass("scrollable");
+              iNoBounce.disable();
+      }
+  });
+  $(window).scroll(function(){
+      $("#window-scroll-top").text($(this).scrollTop());
+  });
+  $(".wrap").scroll(function(){
+      $("#wrap-scroll-top").text($(this).scrollTop());
+  });
+});
+</script>
+</body>
+</html>
