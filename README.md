@@ -1,4 +1,4 @@
-# ios-scroll-bounce
+# iOS Scroll Bounce Sample
 iOS Bounce scroll test Sample implement
 
 **html,css,javascript**
@@ -7,7 +7,9 @@ iOS Bounce scroll test Sample implement
 
 ### html preview URL
 https://chadingtv.github.io/ios-scroll-bounce/
+
 or
+
 https://chading.net/sample/ios-scroll-bounce/
 
 
@@ -15,4 +17,5 @@ https://chading.net/sample/ios-scroll-bounce/
 
 
 Reference inobounce.js
+
 https://github.com/lazd/iNoBounce
